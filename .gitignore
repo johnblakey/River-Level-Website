@@ -1,3 +1,7 @@
+# JB Added
+# JetBrains internal project config file
+.idea/
+
 # Logs
 logs
 *.log
