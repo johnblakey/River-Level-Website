@@ -2,8 +2,8 @@
  * Created by jb on 12/20/17.
  */
 import React from 'react';
-import { Card, CardImg, CardText, CardBody,
-    CardTitle, CardSubtitle, Button, Row, Col } from 'reactstrap';
+import { Card, CardText, CardBody,
+    CardTitle, CardSubtitle, Button } from 'reactstrap';
 
 const RiverCard = props => {
     return (
