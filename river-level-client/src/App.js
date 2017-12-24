@@ -13,7 +13,7 @@ class App extends Component {
                 <p className="App-intro">
                     <GetRivers />
                 </p>
-                <RiverCard />
+                <RiverCard name="Name given by prop"/>
                 <br/>
                 <br/>
                 <h5>Lose uncertainty. Not gear.</h5>
