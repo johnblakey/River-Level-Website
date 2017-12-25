@@ -11,5 +11,5 @@ app.get('/', function (req, res) {
 let port = "4000";
 const server = app.listen(port, "0.0.0.0", () => {
     var {address, port} = server.address();
-    console.log('Express react app running at http://${address}:${port}');
+    console.log(`Express react app running at http://${address}:${port}`);
 });
