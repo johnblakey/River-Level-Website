@@ -3,7 +3,7 @@
  */
 import React from 'react';
 import { Card, CardText, CardBody,
-    CardTitle, CardSubtitle, Button } from 'reactstrap';
+    CardTitle, CardSubtitle } from 'reactstrap';
 
 const RiverCard = props => {
     return (
@@ -11,9 +11,8 @@ const RiverCard = props => {
             <CardBody>
                 <div></div>
                 <CardTitle>{props.name}</CardTitle>
-                <CardSubtitle>Card subtitle</CardSubtitle>
-                <CardText>Some quick example text to build on the card title and make up the bulk of the card's content.</CardText>
-                <Button>Button</Button>
+                <CardSubtitle>{props.level}</CardSubtitle>
+                <CardText>{props.time}</CardText>
             </CardBody>
         </Card>
     );

@@ -9,21 +9,28 @@ class App extends Component {
         this.state = { json: '' };
     }
     componentDidMount() {
-        fetch('http://riverlevel.duckdns.org:2000/api/rivers')
-            .then(results => {
-                return results.json();
-            }).then(data => {
-            this.setState({ json: data });
-            console.log(this.state.json[0].siteName);
-        })
+        const api = 'http://riverlevel.duckdns.org:2000/api/rivers';
+        fetch(api)
+            .then(response => response.json())
+            .then(data => this.setState({ json: data }));
     }
 
     render() {
         console.log(this.state.json);
-        let siteName = "Empty";
+        let site = "Empty";
+        let time = "Empty";
+        let level = "Empty";
+        let props = {};
+        let i = 0;
         if (this.state.json) {
-            siteName = this.state.json[0].siteName;
-            console.log("siteName is:", siteName);
+            site = this.state.json[i].siteName;
+            time = this.state.json[i].dateTime;
+            level = this.state.json[i].levelValue;
+            props = {
+                name: site,
+                time: time,
+                level: level
+            }
         }
         return (
             <div className="App">
@@ -33,7 +40,7 @@ class App extends Component {
                 <p className="App-intro">
                     <GetRivers />
                 </p>
-                <RiverCard name={siteName}/>
+                <RiverCard {...props}/>
                 <br/>
                 <br/>
                 <h5>Lose uncertainty. Not gear.</h5>
