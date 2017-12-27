@@ -6,8 +6,12 @@ import RiverCard from './RiverCard';
 class App extends Component {
     constructor() {
         super();
-        this.state = { json: '' };
+        // Initial json state is set to empty for interim rendering by react
+        const empty = [{ empty: 'empty'}];
+        this.state = { json: empty };
     }
+
+    // fetch part
     componentDidMount() {
         const api = 'http://riverlevel.duckdns.org:2000/api/rivers';
         fetch(api)
@@ -16,22 +20,7 @@ class App extends Component {
     }
 
     render() {
-        console.log(this.state.json);
-        let site = "Empty";
-        let time = "Empty";
-        let level = "Empty";
-        let props = {};
-        let i = 0;
-        if (this.state.json) {
-            site = this.state.json[i].siteName;
-            time = this.state.json[i].dateTime;
-            level = this.state.json[i].levelValue;
-            props = {
-                name: site,
-                time: time,
-                level: level
-            }
-        }
+        // GetRivers is for debugging
         return (
             <div className="App">
                 <header className="App-header">
@@ -40,7 +29,12 @@ class App extends Component {
                 <p className="App-intro">
                     <GetRivers />
                 </p>
-                <RiverCard {...props}/>
+                { // map is a javascrip function to iterate through an array
+                    // this is rendered with the empty state and then the
+                    // filled state by fetch
+                    this.state.json.map((propJson)=> {
+                    return <RiverCard prop={propJson}/>
+                }) }
                 <br/>
                 <br/>
                 <h5>Lose uncertainty. Not gear.</h5>
@@ -50,6 +44,3 @@ class App extends Component {
 }
 
 export default App;
-
-
-
