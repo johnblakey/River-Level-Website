@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './App.css';
-import GetRivers from './GetRivers';
 import RiverCard from './RiverCard';
 
 class App extends Component {
@@ -26,9 +25,6 @@ class App extends Component {
                 <header className="App-header">
                     <h1 className="App-title">River Levels</h1>
                 </header>
-                <p className="App-intro">
-                    <GetRivers />
-                </p>
                 { // map is a javascrip function to iterate through an array
                     // this is rendered with the empty state and then the
                     // filled state by fetch
