@@ -32,9 +32,7 @@ class App extends Component {
                     return <RiverCard prop={propJson}/>
                 }) }
                 <br/>
-                <br/>
                 <h5>Lose uncertainty. Not gear.</h5>
-                <br/>
                 <br/>
             </div>
         );
