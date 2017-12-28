@@ -34,6 +34,8 @@ class App extends Component {
                 <br/>
                 <br/>
                 <h5>Lose uncertainty. Not gear.</h5>
+                <br/>
+                <br/>
             </div>
         );
     }

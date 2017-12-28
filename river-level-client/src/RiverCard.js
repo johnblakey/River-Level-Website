@@ -9,6 +9,7 @@ const RiverCard = prop => {
     let name = prop.prop.siteName;
     let level = prop.prop.levelValue;
     let time = prop.prop.dateTime;
+    let classRiver = prop.prop.class;
     console.log("prop:", prop.prop);
     return (
         <Card>
@@ -17,6 +18,7 @@ const RiverCard = prop => {
                 <CardTitle>{name}</CardTitle>
                 <CardSubtitle>{level}</CardSubtitle>
                 <CardText>{time}</CardText>
+                <CardText>Class {classRiver}</CardText>
             </CardBody>
         </Card>
     );
